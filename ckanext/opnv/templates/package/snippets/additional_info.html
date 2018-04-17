@@ -1,0 +1,16 @@
+{% ckan_extends %}
+
+{% block package_additional_info %}
+
+{{ super() }}
+
+  {% if pkg_dict.registered_only  %}
+    <tr>
+      <th scope="row" class="dataset-label">{{ _("Dataset availability") }}</th>
+      <td class="dataset-details">
+      {{ pkg_dict.registered_only}}
+      </td>
+    </tr>
+  {% endif %}
+
+{% endblock %}
