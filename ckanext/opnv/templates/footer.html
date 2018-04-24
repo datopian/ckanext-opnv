@@ -1,0 +1,54 @@
+{% ckan_extends %}
+
+{% block footer_content %}
+<div class="row">
+    <div class="span3 footer-links">
+        <ul class="unstyled">
+            <li class="footer-title">Hinweise</li>
+            <li>
+                <a href="#">Impressum</a>
+            </li>
+            <li>
+                <a href="#">Datenschutz</a>
+            </li>
+            <li>
+                <a href="#">Kontakt</a>
+            </li>
+        </ul>
+    </div>
+    <div class="span3 footer-links">
+        <ul class="unstyled">
+            <li class="footer-title">
+                Spielregeln
+            </li>
+            <li>
+                <a href="#">Nutzungsbedingungen</a>
+            </li>
+            <li>
+                <a href="#">Netiquette</a>
+            </li>
+        </ul>
+    </div>
+    <div class="span3 footer-links">
+        <ul class="unstyled">
+            <li>
+                <a href="#">
+                    <img src="/base/images/opnv-logo-footer.png" alt="opnv-logo-footer">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="span3 attribution">
+        {% block footer_attribution_25 %}
+        <p>{% trans %}
+            <p>Powered by</p>
+            <a class="hide-text ckan-footer-logo" href="http://ckan.org">CKAN</a>
+            {% endtrans %}</p>
+        {% endblock %}
+
+    </div>
+</div>
+
+
+
+{% endblock %}
