@@ -81,7 +81,6 @@ setup(
     entry_points='''
         [ckan.plugins]
         opnv=ckanext.opnv.plugin:OpnvPlugin
-        opnv_dataset=ckanext.opnv.plugin:OpnvIDatasetFormPlugin
 
         [babel.extractors]
         ckan = ckan.lib.extract:extract_ckan

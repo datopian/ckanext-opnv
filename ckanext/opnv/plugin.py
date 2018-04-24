@@ -1,11 +1,17 @@
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 
-import ckanext.opnv.get
+import ckanext.opnv.action
+import ckanext.opnv.auth
+from ckanext.opnv.model import setup as user_extra_model_setup
 
 
-class OpnvPlugin(plugins.SingletonPlugin):
+class OpnvPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     plugins.implements(plugins.IConfigurer)
+    plugins.implements(plugins.IConfigurable)
+    plugins.implements(plugins.IAuthFunctions, inherit=True)
+    plugins.implements(plugins.IDatasetForm)
+    plugins.implements(plugins.IActions)
 
     # IConfigurer
 
@@ -14,15 +20,22 @@ class OpnvPlugin(plugins.SingletonPlugin):
         toolkit.add_public_directory(config_, 'public')
         toolkit.add_resource('fanstatic', 'opnv')
 
+    def configure(self, config):
+        user_extra_model_setup()
 
-class OpnvIDatasetFormPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
-    plugins.implements(plugins.IDatasetForm)
-    plugins.implements(plugins.IActions)
+    def get_auth_functions(self):
+        auth_functions = {
+            'user_extra_create': ckanext.opnv.auth.user_extra_create,
+            'user_extra_update': ckanext.opnv.auth.user_extra_update,
+            'user_extra_show': ckanext.opnv.auth.user_extra_show,
+
+        }
+        return auth_functions
 
     def get_actions(self):
         action_functions = {
             'package_show':
-                ckanext.opnv.get.package_show,
+                ckanext.opnv.action.package_show,
         }
         return action_functions
 
@@ -34,7 +47,7 @@ class OpnvIDatasetFormPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm
         return schema
 
     def show_package_schema(self):
-        schema = super(OpnvIDatasetFormPlugin, self).show_package_schema()
+        schema = super(OpnvPlugin, self).show_package_schema()
         schema.update({
             'registered_only': [toolkit.get_converter('convert_from_extras'),
                                 toolkit.get_validator('ignore_missing')]
@@ -42,12 +55,12 @@ class OpnvIDatasetFormPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm
         return schema
 
     def create_package_schema(self):
-        schema = super(OpnvIDatasetFormPlugin, self).create_package_schema()
+        schema = super(OpnvPlugin, self).create_package_schema()
         schema = self._modify_package_schema(schema)
         return schema
 
     def update_package_schema(self):
-        schema = super(OpnvIDatasetFormPlugin, self).update_package_schema()
+        schema = super(OpnvPlugin, self).update_package_schema()
         schema = self._modify_package_schema(schema)
         return schema
 
