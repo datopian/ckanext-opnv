@@ -1,0 +1,28 @@
+{% ckan_extends %}
+
+{# You could remove 'free extras' from the package form like this, but we keep them for this example's tests.
+  {% block custom_fields %}
+  {% endblock %}
+#}
+
+{% block package_metadata_fields %}
+
+{% set options = [
+  'Default',
+  'Registered users only'
+] %}
+
+  <div class="control-group">
+    <label class="control-label" for="field-registered_only">{{ _("Availability") }}</label>
+    <div class="controls">
+      <select id="field-registered_only" name="registered_only" data-module="autocomplete">
+        {% for option in options  %}
+        <option {{ 'selected' if data.registered_only == option }}>{{ option }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+
+  {{ super() }}
+
+{% endblock %}
