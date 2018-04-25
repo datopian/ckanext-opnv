@@ -22,6 +22,10 @@ h6 {
     font-weight: 600;
 }
 
+a {
+    color: @color-primary;
+}
+
 .account-masthead {
     background-color: @color-white;
     background: @color-white;
@@ -118,6 +122,15 @@ h6 {
     [role="main"] {
         background-color: @bg-light;
         background-image: none;
+    }
+}
+
+@media (max-width: 979px) {
+    .nav-collapse .nav>li>a:hover,
+    .nav-collapse .nav>li>a:focus,
+    .nav-collapse .dropdown-menu a:hover,
+    .nav-collapse .dropdown-menu a:focus {
+        background-color: transparent;
     }
 }
 
@@ -228,17 +241,4 @@ body {
 .text-desc {
     font-size: small;
     color: @color-secondary;
-}
-
-@media (max-width: 979px) {
-    .nav-collapse .nav>li>a:hover,
-    .nav-collapse .nav>li>a:focus,
-    .nav-collapse .dropdown-menu a:hover,
-    .nav-collapse .dropdown-menu a:focus {
-        background-color: transparent;
-    }
-}
-
-a {
-    color: @color-primary;
 }
