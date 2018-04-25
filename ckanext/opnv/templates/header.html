@@ -1,53 +1,60 @@
 {% ckan_extends %}
 
 {% block header_wrapper %}
+
 {% block header_account %}
-    {{ super() }}
-{% endblock %}
-<header class="navbar navbar-static-top masthead">
-  {% block header_debug %}
-    {{ super() }}
-  {% endblock %}
-  <div class="container">
-    <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
-      <span class="fa-bar"></span>
-      <span class="fa-bar"></span>
-      <span class="fa-bar"></span>
-    </button>
-    
-    <div class="row">
-      <div class="span4">
-        <hgroup class="{{ g.header_class }}">
-          {% block header_logo %} {{ super() }} {% endblock %}
-        </hgroup>
-      </div>
-      <div class="span8">
-        {% block header_site_search %} {{ super() }} {% endblock %}
+<header class="account-masthead">
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span10 offset1">
+        {% block header_account_container_content %} {{ super() }} {% endblock %}
       </div>
     </div>
+  </div>
+</header>
+{% endblock %}
 
-  
-    <div class="nav-collapse collapse">
-      {% block header_site_navigation %}
-        <nav class="section navigation">
-          <ul class="nav">
-            {% block header_site_navigation_tabs %}
-              {{ h.build_nav_main(
-                ('search', _('Datasets')),
-                ('organizations_index', _('Organizations')),
-                ('group_index', _('Groups')),
-                ('about', _('About'))
-              ) }}
-            {% endblock %}
-          </ul>
-        </nav>
-      {% endblock %}
+<header class="navbar navbar-static-top masthead">
+  {% block header_debug %} {{ super() }} {% endblock %}
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span10 offset1">
+        <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
+          <span class="fa fa-bars"></span>
+        </button>
+
+        <div class="row-fluid">
+          <div class="span4">
+            <hgroup class="{{ g.header_class }}">
+              {% block header_logo %} {{ super() }} {% endblock %}
+            </hgroup>
+          </div>
+          <div class="span8">
+            {% block header_site_search %} {{ super() }} {% endblock %}
+          </div>
+        </div>
+
+        <div class="nav-collapse collapse">
+          {% block header_site_navigation %}
+          <nav class="section navigation">
+            <ul class="nav">
+              {% block header_site_navigation_tabs %} {{ h.build_nav_main( ('search', _('Datasets')), ('organizations_index', _('Organizations')),
+              ('group_index', _('Groups')), ('about', _('About')) ) }} {% endblock %}
+            </ul>
+          </nav>
+          {% endblock %}
+        </div>
+      </div>
     </div>
   </div>
 </header>
 <div role="main" class="hero">
-    <div class="container">
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span10 offset1">
         {% block promoted %} {% snippet 'home/snippets/promoted.html' %} {% endblock %}
+      </div>
     </div>
+  </div>
 </div>
 {% endblock %}

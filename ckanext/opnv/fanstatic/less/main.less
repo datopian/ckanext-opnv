@@ -49,6 +49,13 @@ a {
     background-color: @color-secondary-darker;
 }
 
+.toolbar {
+    padding: 20px 10px;
+    .breadcrumb {
+        font-size: 18px;
+    }
+}
+
 .box {
     box-shadow: none;
 }
@@ -113,14 +120,26 @@ a {
     font-family: "Titillium Web", sans-serif;
 }
 
-@media (min-width: 768px) {
-    [role="main"].hero {
-        background: url("@{imagePath}/header-lp.jpg") top left no-repeat;
-        background-size: cover;
-        min-height: 200px;
+@media (max-width: 767px) {
+    .navbar-fixed-top,
+    .navbar-fixed-bottom,
+    .navbar-static-top {
+        margin-left: 0;
+        margin-right: 0;
     }
+    .footer-links{
+        margin-bottom: 30px;
+    }
+}
+
+[role="main"].hero {
+    background: url("@{imagePath}/header-lp.jpg") top left no-repeat;
+    background-size: cover;
+    min-height: 200px;
+}
+@media (min-width: 768px) {
     [role="main"] {
-        background-color: @bg-light;
+        background-color: @color-white;
         background-image: none;
     }
 }
@@ -193,13 +212,18 @@ body {
 
 .sponsors-logos {
     display: flex;
+    flex-wrap: wrap;
     padding-left: 0;
     list-style: none;
     align-items: center;
     justify-content: space-between;
+    padding-top: 30px;
     padding-bottom: 30px;
+    a {
+        display: inline-block;
+        margin: 15px;
+    }
 }
-
 .news-list {
     padding-left: 0;
     list-style: none;
@@ -241,4 +265,37 @@ body {
 .text-desc {
     font-size: small;
     color: @color-secondary;
+}
+
+@media (max-width: 979px) {
+    .nav-collapse .nav>li>a:hover,
+    .nav-collapse .nav>li>a:focus,
+    .nav-collapse .dropdown-menu a:hover,
+    .nav-collapse .dropdown-menu a:focus {
+        background-color: transparent;
+    }
+}
+
+a {
+    color: @color-primary;
+}
+
+.search-form {
+    .search-input {
+        &.search-giant {
+            button {
+                margin-top: -15px;
+            }
+        }
+    }
+}
+
+.masthead .btn-navbar,
+.masthead .btn-navbar:hover,
+.masthead .btn-navbar:focus,
+.masthead .btn-navbar:active,
+.masthead .btn-navbar.active,
+.masthead .btn-navbar.disabled,
+.masthead .btn-navbar[disabled] {
+    background-color: @color-primary;
 }

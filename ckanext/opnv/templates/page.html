@@ -1,8 +1,55 @@
-{% ckan_extends %} {% block footer %}
-<img src="{{ h.url_for_static_or_external('/base/images/footer-separator.jpg') }}" alt="footer-separator">
-<footer class="site-footer">
-    <div class="container">
-        {% include "footer.html" %}
+{% ckan_extends %}
+{%- block page -%}
+  {% block skip %}
+    {{ super() }}
+  {% endblock %}
+  {%- block header %}
+    {{ super() }}
+  {% endblock -%}
+  {%- block content %}
+    {% block maintag %}{{ super() }}{% endblock %}
+      <div id="content" class="container-fluid">
+        {% block main_content %}
+        <div class="row-fluid">
+          <div class="span10 offset1">
+          {% block flash %}
+            {{ super() }}
+          {% endblock %}
+          {% block toolbar %}
+              <div class="toolbar">
+                {% block breadcrumb %} {{ super() }} {% endblock %}
+              </div>
+              {% endblock %}
+            </div>
+          </div>
+          <div class="row-fluid">
+            <div class="span10 offset1">
+              <div class="row-fluid">
+                {% block pre_primary %}
+                {% endblock %}
+                {% block primary %}
+                  <div class="primary span9">
+                    {% block primary_content %}
+                      {{ super() }}
+                    {% endblock %}
+                  </div>
+                {% endblock %}
+                {% block secondary %}
+                  {{ super() }}
+                {% endblock %}
+              </div>
+            </div>
+          </div>
+        {% endblock %}
+      </div>
     </div>
-</footer>
-{% endblock %}
+  {% endblock -%}
+  {% block footer %}
+  <img src="{{ h.url_for_static_or_external('/base/images/footer-separator.jpg') }}" alt="footer-separator">
+  <footer class="site-footer">
+      <div class="container">
+          {% include "footer.html" %}
+      </div>
+  </footer>
+  {% endblock %}
+{%- endblock -%}

@@ -1,5 +1,4 @@
 {% ckan_extends %}
-
 {% block footer_content %}
 <div class="row">
     <div class="span3 footer-links">
@@ -39,16 +38,12 @@
         </ul>
     </div>
     <div class="span3 attribution">
-        {% block footer_attribution_25 %}
+        {% block footer_attribution %}
         <p>{% trans %}
             <p>Powered by</p>
             <a class="hide-text ckan-footer-logo" href="http://ckan.org">CKAN</a>
             {% endtrans %}</p>
         {% endblock %}
-
     </div>
 </div>
-
-
-
 {% endblock %}
