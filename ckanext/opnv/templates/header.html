@@ -45,4 +45,9 @@
     </div>
   </div>
 </header>
+<div role="main" class="hero">
+    <div class="container">
+        {% block promoted %} {% snippet 'home/snippets/promoted.html' %} {% endblock %}
+    </div>
+</div>
 {% endblock %}

@@ -1,7 +1,5 @@
-{% ckan_extends %}
-
-{% block footer %}
-<img src="/base/images/footer-separator.png" alt="opnv-logo-footer">
+{% ckan_extends %} {% block footer %}
+<img src="{{ h.url_for_static_or_external('/base/images/footer-separator.jpg') }}" alt="footer-separator">
 <footer class="site-footer">
     <div class="container">
         {% include "footer.html" %}

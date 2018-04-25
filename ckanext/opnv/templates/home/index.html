@@ -1,0 +1,126 @@
+ {% ckan_extends %} {% block content %}
+
+<div class="homepage">
+    <div class="container">
+        {{ self.flash() }}
+    </div>
+    {% block primary_content %}
+    <div role="main">
+        <div class="container">
+            <div class="row">
+                <div class="span6">
+                    {% block intro %} {% snippet 'home/snippets/intro.html' %} {% endblock %}
+                    <div class="intro-column">
+                        <ul class="unstyled sponsors-logos">
+                            <li>
+                                <a href="#">
+                                    <img src="{{ h.url_for_static_or_external('/base/images/mvv.png') }}" alt="mvv-logo">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="{{ h.url_for_static_or_external('/base/images/vbb.png') }}" alt="vbb-logo">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="{{ h.url_for_static_or_external('/base/images/vrr.png') }}" alt="vrr-logo">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="{{ h.url_for_static_or_external('/base/images/vvs.png') }}" alt="vvs-logo">
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="unstyled sponsors-logos">
+                            <li>
+                                <a href="#">
+                                    <img src="{{ h.url_for_static_or_external('/base/images/rmv.png') }}" alt="rmv-logo">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="{{ h.url_for_static_or_external('/base/images/hvv.png') }}" alt="hvv-logo">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="span6">
+                    <div class="news-column">
+                        <h1 class="module-headline">News and Events</h1>
+                        <ul class="unstyled news-list">
+                            <li class="news-list-item">
+                                <a href="#">
+                                    <h4 class="news-title">Competently negotiate principle-centered e-commerce vis-a-vis distinctive markets
+                                    </h4>
+                                </a>
+                                <p class="news-date">18 APR 2018</p>
+                            </li>
+                            <li class="news-list-item">
+                                <a href="#">
+                                    <h4 class="news-title">Authoritatively develop inexpensive methodologies and resource-leveling mindshare
+                                    </h4>
+                                </a>
+                                <p class="news-date">17 APR 2018</p>
+                            </li>
+                            <li class="news-list-item">
+                                <a href="#">
+                                    <h4 class="news-title">Authoritatively develop inexpensive methodologies and resource-leveling mindshare. Professionally
+                                        harness focused strategic theme areas through focused metrics.
+                                    </h4>
+                                </a>
+                                <p class="news-date">16 APR 2018</p>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="news-column">
+                        <h1 class="module-headline">Showcases</h1>
+                        <ul class="unstyled news-list">
+                            <li class="news-list-item">
+                                <a href="#">
+                                    <img src="{{ h.url_for_static_or_external('/base/images/showcase-img1.png') }}" alt="showcase-img">
+                                </a>
+                                <h4 class="news-title">
+                                    <a href="#">Collaboratively enhance tactical technologies before highly efficient data. Completel
+                                        seize fully tested relationships
+                                    </a>
+                                </h4>
+
+                                <p class="text-desc">Synergistically productize interactive imperatives after client-centric quality vectors.Conveniently
+                                    myocardinate synergistic systems through just in time supply chains. Distinctively benchmark
+                                    high-quality mindshare before intermandated supply</p>
+                            </li>
+                            <li class="news-list-item">
+                                <a href="#">
+                                    <img src="{{ h.url_for_static_or_external('/base/images/showcase-img2.png') }}" alt="showcase-img">
+                                </a>
+                                <h4 class="news-title">
+                                    <a href="#">Appropriately transition premium potentialities and market-driven services. Seamlessly
+                                        evisculate equity invested e-business before real-time ideas
+                                </h4>
+                                </a>
+                                <p class="text-desc">Objectively incubate covalent innovation before tactical opportunities. Professionally facilitate
+                                    sticky users rather than seamless partnerships. Continually productivate efficient vortals
+                                    whereas cross-media quality vectors. Appropriately expedite interactive e-tailers without
+                                    scalable services</p>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</div>
+{% endblock %}

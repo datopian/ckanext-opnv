@@ -1,145 +1,172 @@
 @color-primary: #93c355;
 @button-hover: #84b04c;
 @color-secondary: #9e9f9e;
+@color-secondary-opacity: rgba(158, 159, 158, 0.6);
 @color-secondary-darker: #646059;
 @color-white: #ffffff;
 @bg-light: #f5f5f5;
-
+@gray-line: #ececec;
 @imagePath: "../../../../base/images";
-
-
-
 body {
-  font-family: "Titillium Web", sans-serif;
-  background: @color-white;
+    font-family: "Titillium Web", sans-serif;
+    background: @color-white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: @color-secondary-darker;
+    font-weight: 600;
 }
 
 .account-masthead {
-  background-color: @color-white;
-  background: @color-white;
+    background-color: @color-white;
+    background: @color-white;
 }
+
 .account-masthead .account ul li a {
-  color: @color-secondary-darker;
-  &:hover,
-  &:focus,
-  &:active {
-    color: @color-primary;
-    background-color: transparent;
-  }
+    color: @color-secondary-darker;
+    &:hover,
+    &:focus,
+    &:active {
+        color: @color-primary;
+        background-color: transparent;
+    }
 }
+
 .account-masthead .account ul li {
-  border-left: none;
+    border-left: none;
 }
 
 .account-masthead .account .notifications a span.badge {
-  background-color: @color-secondary-darker;
+    background-color: @color-secondary-darker;
 }
+
 .box {
-  box-shadow: none;
+    box-shadow: none;
 }
+
 .hero .box {
-  border: none;
+    border: none;
 }
 
 .masthead .section.site-search {
-  float: right;
-  margin-top: 15px;
+    float: right;
+    margin-top: 15px;
 }
 
-.navbar .nav > li > a {
-  &,
-  &:hover,
-  &:focus,
-  &:active {
-    color: @color-secondary;
-    border-top: 2px solid transparent;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-  }
-  &:hover {
-    border-top-color: @color-primary;
-    color: @color-primary;
-  }
+.navbar .nav>li>a {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+        color: @color-secondary;
+        border-top: 2px solid transparent;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+    &:hover {
+        border-top-color: @color-primary;
+        color: @color-primary;
+    }
 }
 
-.navbar .nav > .active > a {
-  &,
-  &:hover {
-    border-top-color: @color-primary;
-    color: @color-primary;
-    background: transparent;
-    box-shadow: none;
-  }
+.navbar .nav>.active>a {
+    &,
+    &:hover {
+        border-top-color: @color-primary;
+        color: @color-primary;
+        background: transparent;
+        box-shadow: none;
+    }
 }
 
 .masthead {
-  background: @color-white;
-  margin-bottom: 20px;
+    background: @color-white;
+    margin-bottom: 20px;
 }
 
 @media (min-width: 980px) {
-  .masthead .nav-collapse.collapse {
-    float: none;
-  }
+    .masthead .nav-collapse.collapse {
+        float: none;
+    }
 }
 
 .masthead .navigation {
-  float: none;
-  border-top: 1px solid @color-secondary;
-  margin-right: 0;
-  margin-top: 15px;
+    float: none;
+    border-top: 1px solid @color-secondary;
+    margin-right: 0;
+    margin-top: 15px;
+}
+
+.masthead input[type="text"] {
+    border-color: @color-secondary;
+    border-radius: 0;
+    font-family: "Titillium Web", sans-serif;
 }
 
 @media (min-width: 768px) {
-  [role="main"].hero {
-    background: url("@{imagePath}/header-lp.png") top left no-repeat;
-    background-size: contain;
-    max-height: 250px;
-  }
-  [role="main"] {
-    background-color: @bg-light;
-    background-image: none;
-  }
+    [role="main"].hero {
+        background: url("@{imagePath}/header-lp.jpg") top left no-repeat;
+        background-size: cover;
+        min-height: 200px;
+    }
+    [role="main"] {
+        background-color: @bg-light;
+        background-image: none;
+    }
+}
+
+[role="main"] {
+    min-height: 0px;
 }
 
 @media (max-width: 976px) {
-  .masthead .section {
-    float: none;
-  }
+    .masthead .section {
+        float: none;
+    }
 }
 
 .site-footer,
 body {
-  background: @color-white;
+    background: @color-white;
 }
+
 .site-footer,
 .site-footer label,
 .site-footer small {
-  color: @color-secondary;
-  margin-top: 20px;
+    color: @color-secondary;
+    margin-top: 20px;
 }
+
 .site-footer a {
-  color: @color-secondary-darker;
+    color: @color-secondary-darker;
 }
+
 .footer-title {
-  font-size: 15px;
-  color: @color-secondary-darker;
-  font-weight: 600;
-  padding-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+    font-size: 15px;
+    color: @color-secondary-darker;
+    font-weight: 600;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
+
 .btn-primary {
-  background: @color-primary;
+    background: @color-primary;
 }
+
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active,
 .btn-primary.active,
 .btn-primary.disabled,
 .btn-primary[disabled] {
-  background-color: @button-hover;
+    background-color: @button-hover;
 }
 
 .site-footer .attribution .ckan-footer-logo {
@@ -149,4 +176,69 @@ body {
     margin-top: 2px;
     background: url("@{imagePath}/ckan-logo.svg") no-repeat top left;
     text-indent: -900em;
-  }
+}
+
+.sponsors-logos {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 30px;
+}
+
+.news-list {
+    padding-left: 0;
+    list-style: none;
+    background-color: @color-white;
+    padding: 10px 25px;
+    margin-bottom: 30px;
+}
+
+.news-date {
+    font-size: smaller;
+    color: @color-primary;
+    border-bottom: 1px solid @gray-line;
+}
+
+.module-headline {
+    background-color: @color-white;
+    border-left: 10px solid @color-primary;
+    padding: 15px;
+}
+
+.news-title a {
+    color: @color-secondary-darker;
+    font-weight: 600;
+}
+
+.hero .page-heading {
+    background-color: @color-secondary-opacity;
+    color: @color-white;
+    border-left: 10px solid @color-primary;
+    padding: 15px;
+    display: inline-block;
+    margin-top: 50px;
+}
+
+.opnv-headings {
+    padding-left: 0px;
+}
+
+.text-desc {
+    font-size: small;
+    color: @color-secondary;
+}
+
+@media (max-width: 979px) {
+    .nav-collapse .nav>li>a:hover,
+    .nav-collapse .nav>li>a:focus,
+    .nav-collapse .dropdown-menu a:hover,
+    .nav-collapse .dropdown-menu a:focus {
+        background-color: transparent;
+    }
+}
+
+a {
+    color: @color-primary;
+}

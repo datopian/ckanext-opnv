@@ -1,0 +1,14 @@
+{% set tagline = g.site_description %}
+
+<div class="module-content opnv-headings">
+    {{ page }}
+  <header>
+    {% if tagline %}
+    <h1 class="page-heading">{{ tagline }}</h1>
+    {% else %}
+    <h1 class="page-heading">{{ _("Welcome to CKAN") }}</h1>
+    {% endif %}
+  </header>
+  {% block home_image %}
+  {% endblock %}
+</div>
