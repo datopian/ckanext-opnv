@@ -4,6 +4,8 @@ import ckan.plugins.toolkit as toolkit
 import ckanext.opnv.action
 import ckanext.opnv.auth
 from ckanext.opnv.model import setup as user_extra_model_setup
+import ckanext.opnv.helpers as opnv_helpers
+
 
 
 class OpnvPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
@@ -12,6 +14,8 @@ class OpnvPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     plugins.implements(plugins.IAuthFunctions, inherit=True)
     plugins.implements(plugins.IDatasetForm)
     plugins.implements(plugins.IActions)
+    plugins.implements(plugins.ITemplateHelpers)
+
 
     # IConfigurer
 
@@ -38,6 +42,12 @@ class OpnvPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
                 ckanext.opnv.action.package_show,
         }
         return action_functions
+
+    def get_helpers(self):
+        helper_functions = {
+            'get_page_title': opnv_helpers.get_page_title,
+                }
+        return helper_functions
 
     def _modify_package_schema(self, schema):
         schema.update({
