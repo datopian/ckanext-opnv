@@ -65,7 +65,7 @@
                           {{ showcase.title or showcase.name}}
                         </a>
                       </h4>
-                      <p class="text-desc">{{ showcase.notes }}</p>
+                      <p class="text-desc">{{ showcase.notes|truncate(200) }}</p>
                     </li>
                     {% endfor %}
                   </ul>
