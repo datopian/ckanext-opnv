@@ -13,7 +13,7 @@ def get_page_title():
         'ckanext.showcase.controller:ShowcaseController': _("Showcases"),
         'about': _("About")
     }
-    
+
     if p & titles.viewkeys():
         try:
             return titles[p[0]]
@@ -21,3 +21,11 @@ def get_page_title():
             return titles[p[1]]
     else:
         return None
+
+
+def org_list():
+    return toolkit.get_action('organization_list')({}, {})
+
+
+def get_org_dict(org):
+    return toolkit.get_action('organization_show')({}, {'id': org})

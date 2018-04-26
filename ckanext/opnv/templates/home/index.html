@@ -18,36 +18,15 @@
                 {% block intro %} {% snippet 'home/snippets/intro.html' %} {% endblock %}
                 <div class="intro-column">
                   <ul class="unstyled sponsors-logos">
-                    <li>
-                      <a href="#">
-                        <img src="{{ h.url_for_static_or_external('/base/images/mvv.png') }}" alt="mvv-logo">
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <img src="{{ h.url_for_static_or_external('/base/images/vbb.png') }}" alt="vbb-logo">
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <img src="{{ h.url_for_static_or_external('/base/images/vrr.png') }}" alt="vrr-logo">
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <img src="{{ h.url_for_static_or_external('/base/images/vvs.png') }}" alt="vvs-logo">
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <img src="{{ h.url_for_static_or_external('/base/images/rmv.png') }}" alt="rmv-logo">
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <img src="{{ h.url_for_static_or_external('/base/images/hvv.png') }}" alt="hvv-logo">
-                      </a>
-                    </li>
+                    {% set organizations_list = h.org_list() %}
+                    {% for organization in organizations_list %}
+                      {% set org = h.get_org_dict(organization) %}
+                        <li>
+                          <a href="{{h.url_for(controller='organization', action='read', id=organization)}}">
+                            <img src="{{ org.image_display_url or h.url_for_static('/base/images/placeholder-organization.png') }}" alt="{{organization}}-logo">
+                          </a>
+                        </li>
+                    {% endfor %}
                   </ul>
                 </div>
               </div>

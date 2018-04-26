@@ -46,6 +46,8 @@ class OpnvPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     def get_helpers(self):
         helper_functions = {
             'get_page_title': opnv_helpers.get_page_title,
+            'org_list': opnv_helpers.org_list,
+            'get_org_dict': opnv_helpers.get_org_dict
                 }
         return helper_functions
 
