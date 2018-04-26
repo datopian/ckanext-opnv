@@ -274,9 +274,4 @@ def package_show(context, data_dict):
     for item in plugins.PluginImplementations(plugins.IPackageController):
         item.after_show(context, package_dict)
 
-    # Make the resources unavailable if a user is not logged in
-    if package_dict['registered_only'] != 'Default' and not c.user:
-        for res in package_dict['resources']:
-            res['url'] = ''
-
     return package_dict
