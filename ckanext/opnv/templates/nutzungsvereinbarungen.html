@@ -1,46 +1,261 @@
 {% extends "page.html" %}
 
+{% set page_title = _('Nutzungsvereinbarungen') %}
+
+{% block subtitle %}{{ page_title }}{% endblock %}
+
+{% block breadcrumb_content %}
+  <li class="active"> <a href="{{ h.url_for('nutzungsvereinbarungen')}}">{{ page_title }}</a></li>
+{% endblock %}
+
 {% block primary %}
 <article class="module">
   <div class="module-content">
-    <h1>Nutzungsvereinbarungen</h1>
-    <pre>
-      Geltungsbereich
-
-      Die vorliegenden Bedingungen entfalten Geltung für das unter der Domain www.openvrr.de bereitgehaltene Internetportal (im Folgenden: „Portal“).
-
-      Betrieb, Verantwortliche, Links und Inhalte Dritter
-
-      (1) Das Portal bietet Ihnen einen Zugang zu den als OpenData veröffentlichten Daten der Verkehrsverbund Rhein-Ruhr AöR (im Folgenden: „VRR AöR“), welche Betreiberin dieses Portals ist.
-
-      (2) Das Hosting und die technische Umsetzung des Portals erfolgt durch die Viderum GmbH.
-
-      (3) Für die im Portal bereitgestellten Daten und deren Lizenzierung an Abnehmer ist ausschließlich die VRR AöR zuständig.
-
-      (4) Das Portal kann Links zu externen Webseiten Dritter enthalten. Auf diese Inhalte hat die VRR AöR keinen Einfluss und kann keine Gewähr für diese übernehmen. Die Verantwortlichkeit liegt grundsätzlich beim Anbieter des externen Webangebotes. Die VRR AöR hat diese externen Webangebote auf etwaige Rechtsverstöße überprüft. Eine permanente Kontrolle der verlinkten Seiten ist jedoch ohne Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Sobald der VRR AöR derartige Anhaltspunkte bekannt werden, wird sie derartige Links unverzüglich entfernen.
-
-      Weiterentwicklung des Portals, Änderungsvorbehalt
-
-      (1) Da sich das Portal in einer stetigen Weiterentwicklung befindet, behält sich die VRR AöR das Recht vor, die dort angebotenen Dienste jederzeit zu ändern, einzuschränken, ganz einzustellen oder abweichende Dienste anzubieten. Weder Erreichbarkeit noch Verfügbarkeit der Server noch die inhaltliche Richtigkeit jedweder vorgehaltener Daten werden gewährleistet. Ebenso kann die VRR AöR die vorgehaltenen Daten und deren Lizenzierung jederzeit und ohne Vorankündigung ändern.
-
-      (2) Die VRR AöR behält sich auch das Recht vor, diese Nutzungsbedingungen jederzeit zu verändern.
-
-      Untersagte Nutzungsarten, Haftungs- und Gewährleistungsausschluss
-
-      (1) Es ist Ihnen untersagt, bei der Nutzung dieses Portals Software oder sonstige Mechanismen zu verwenden, die zu einer Störung des Betriebes dieses Portals führen können. Dazu gehört insbesondere auch die übermäßige oder unzumutbare Belastung der technischen Infrastruktur. Die VRR AöR behält sich die jederzeitige Beschränkung oder Verwehrung des Zugangs zum Portal vor.
-
-      (2) Sie akzeptieren durch die Nutzung des Portals diese Bedingungen und bei der Datennutzung deren Lizenzbestimmungen und sind für die Nutzung der bereitgestellten Daten und Inhalte, sowie für die Einhaltung der Lizenzbestimmungen, allein verantwortlich.
-
-      (3) Die Daten und sonstigen Inhalte dieses Portals werden von der VRR AöR ohne jede Gewähr bereitgestellt. Eine Verantwortlichkeit für deren Fehlerfreiheit, Eignung für einen bestimmten Zweck, Freiheit von Rechten Dritter, Aktualität oder Aktualisierung besteht seitens der VRR AöR ausdrücklich nicht. Die VRR AöR haftet auch nicht für Schäden, die durch die Datennutzung entstehen oder die beim Abrufen oder Herunterladen von Inhalten dieses Portals durch Schadprogramme verursacht werden. Diese Beschränkungen gelten nicht im Rahmen übernommener Garantien, für Verletzungen des Lebens, des Körpers und der Gesundheit sowie für Ansprüche aus dem Produkthaftungsgesetz.
-
-      Hinweise zu Schutzrechten
-
-      Die VRR AöR gewährt keine Rechte, die über die durch die jeweilige Lizenz eingeräumten Nutzungsrechte hinausgehen. Marken-, Design-, sonstige gewerbliche Schutzrechte und das Urheberrecht sind von Ihnen zu beachten. Die Verwendung von Marken der VRR AöR ist ohne ihre vorherige schriftliche Zustimmung ausdrücklich untersagt.
-
-      Nutzung des Fahrgastinformationssystems
-
-      Für die Nutzung des Fahrgastinformationssystemes gelten die <a href="/Anlage 1.1_Nutzungsbedingungen API_23022018 - LOGO - Copy.pdf">Nutzungsbedingungen API</a>.
-    </pre>
+    <h1>{{ page_title }}</h1>
+    <p>
+      <span lang="de-DE">&sect; 1 Vertragsgegenstand: </span>
+    </p>
+    <p>
+      <span lang="de-DE">1.1 Gegenstand dieser Vereinbarung ist die Regelung der Bereitstellung der vertraglich erfassten Daten durch den Lizenzgeber
+        und die Einr&auml;umung von Nutzungsrechten bzw. der Verwendung dieser Daten durch den Lizenznehmer. </span>
+    </p>
+    <p>
+      <span lang="de-DE">1.2 Der Lizenzgeber h&auml;lt f&uuml;r den Lizenznehmer Daten aus dem Fahrplanauskunftssystem &uuml;ber eine entsprechende
+        Schnittstelle (API) zum Abruf bereit. </span>
+    </p>
+    <p>
+      <span lang="de-DE">&sect; 2 Leistungen des Lizenzgebers: </span>
+    </p>
+    <p>
+      <span lang="de-DE">2.1 Der Lizenzgeber verpflichtet sich nach Ma&szlig;gabe dieses Vertrages, dem Lizenznehmer &uuml;ber die Schnittstelle
+        Zugang zu den Schnittstellendaten zu erm&ouml;glichen. </span>
+    </p>
+    <p>
+      <span lang="de-DE">2.2 Der Lizenzgeber wird die &uuml;ber die Schnittstelle bereit gestellten Fahrplanauskunftsdaten regelm&auml;&szlig;ig
+        aktualisieren. Der Zeitpunkt der Aktualisierung kann insbesondere bei technischen Problemen, Ausf&auml;llen bei der
+        Zulieferung von Daten durch Dritte oder bei aktuellen &Auml;nderungen (z. B. Strecken&auml;nderungen) variieren.
+        </span>
+    </p>
+    <p>
+      <span lang="de-DE">2.3 Die Schnittstelle ist in der Regel durchgehend erreichbar. Hiervon ausgenommen ist die Durchf&uuml;hrung von notwendigen
+        Wartungsarbeiten und Verbesserungen, sowie Ausf&auml;lle, Einwirkungen h&ouml;herer Gewalt, sowie technische, vor
+        allem systemimmanente Gr&uuml;nde, die der Lizenzgeber nicht zu vertreten hat. </span>
+    </p>
+    <p>
+      <span lang="de-DE">2.4 Der Lizenzgeber hat das Recht, die Schnittstelle und die Bereitstellung der Daten technisch zu ver&auml;ndern und
+        weiterzuentwickeln. Etwaige Anpassungskosten hat der Lizenznehmer selbst zu tragen. </span>
+    </p>
+    <p>
+      <span lang="de-DE">2.5 Diese Vereinbarung begr&uuml;ndet keine Anspr&uuml;che des Lizenznehmers auf die Bereitstellung bestimmter Daten
+        in einem bestimmten Umfang, in einer bestimmten Qualit&auml;t und zu einem bestimmten Zeitpunkt oder auf eine bestimmte
+        Verf&uuml;gbarkeit. Aus diesem Grund schuldet der Lizenzgeber auch nicht die Vollst&auml;ndigkeit und inhaltliche
+        Richtigkeit der Daten. </span>
+    </p>
+    <p>
+      <span lang="de-DE">&sect; 3 Pflichten des Lizenznehmers: </span>
+    </p>
+    <p>
+      <span lang="de-DE">3.1 &Uuml;ber die Schnittstelle zur Verf&uuml;gung gestellte Daten d&uuml;rfen lediglich als Live-Abfragen dargestellt
+        werden. Unter Live-Abfrage ist die Abfrage einzelner Fahrplaninformationen entsprechend der Anfrage des Endnutzers
+        zu verstehen. Untersagt ist der systematische Abruf der Daten oder eines wesentlichen Teils der Daten (Serienabfragen).
+        </span>
+    </p>
+    <p>
+      <span lang="de-DE">3.2 Der Lizenznehmer darf die hiermit gew&auml;hrte Zugangsm&ouml;glichkeit (insbesondere Zugangsdaten oder API-Schl&uuml;ssel)
+        nicht an Dritte oder Endnutzer weitergeben. </span>
+    </p>
+    <p>
+      <span lang="de-DE">3.3 Eine &uuml;ber 3.1 und 3.2 hinausgehende Weitergabe der Daten ist mit dem Lizenzgeber ausdr&uuml;cklich zu vereinbaren.
+        </span>
+    </p>
+    <p>
+      <span lang="de-DE">&sect; 4 Rechteeinr&auml;umung und Formen der Zusammenarbeit: </span>
+    </p>
+    <p>
+      <span lang="de-DE">4.1 Der Lizenznehmer erh&auml;lt das nicht ausschlie&szlig;liche, nicht &uuml;bertragbare, nicht unterlizenzierbare
+        sowie zeitlich und inhaltlich auf die Dauer des Vertrages beschr&auml;nkte Recht, die bereitgestellten Daten &uuml;ber
+        die Schnittstelle abzurufen und f&uuml;r die kommerzielle und nicht kommerzielle Nutzung </span>
+    </p>
+    <p>
+      <span lang="de-DE">a) zu vervielf&auml;ltigen, zu ver&auml;ndern, zu bearbeiten, </span>
+    </p>
+    <p>
+      <span lang="de-DE">b) mit eigenen Daten und Daten Anderer zusammenzuf&uuml;hren und zu selbst&auml;ndigen neuen Datens&auml;tzen zu verbinden
+        und </span>
+    </p>
+    <p>
+      <span lang="de-DE">c) die Daten bzw. die neuen Datens&auml;tze auf eigenen Anwendungen, das hei&szlig;t auf der Webseite, in einer Softwareanwendung
+        oder einer mobilen Applikation, in &ouml;ffentlichen und nicht &ouml;ffentlichen elektronischen Netzwerken einzubinden
+        und anzuzeigen. </span>
+    </p>
+    <p>
+      <span lang="de-DE">4.2 Die Bereitstellung der Daten selbst hat grunds&auml;tzlich kostenfrei zu erfolgen. Die Bereitstellung der Daten
+        &uuml;ber eine kostenpflichtige Plattform oder mobile Applikation des Lizenznehmers ist - nach vorheriger Zustimmung
+        durch den Lizenzgeber - jedoch zul&auml;ssig. </span>
+    </p>
+    <p>
+      <span lang="de-DE">4.3 Bei jeder Nutzung ist sicherzustellen, dass das Logo des Lizenzgebers und/oder ein Link auf eine von dem Lizenzgeber
+        zu benennende Webseite in lesbarer Gr&ouml;&szlig;e als Quellhinweise (z. B. in der Ergebnisliste der Fahrplanauskunft)
+        platziert werden. Hierf&uuml;r wird dem Lizenznehmer ein auf die Laufzeit des Vertrages beschr&auml;nktes Nutzungsrecht
+        an dem von dem Lizenzgeber zur Verf&uuml;gung gestellten Logo einger&auml;umt. Der Lizenznehmer wird des Weiteren
+        an einer geeigneten Stelle folgenden Hinweis geben: &bdquo;Fahrplanausk&uuml;nfte werden durch den Lizenzgeber zur
+        Verf&uuml;gung gestellt. Alle Angaben ohne Gew&auml;hr.&ldquo; Werden mit der Fahrplanauskunft noch weiterf&uuml;hrende
+        Verkn&uuml;pfungen (nachfolgend Deeplinks) in die Informationssysteme des Lizenzgebers ausgeliefert, ist dies bei
+        der Anzeige der Fahrt gegen&uuml;ber dem Endnutzer kenntlich zu machen sowie eine einfache M&ouml;glichkeit f&uuml;r
+        die Nutzung der konkreten Verkn&uuml;pfung (konkret in Form parametrisierter Deeplinks) vorzusehen Die Ausgestaltung
+        der Verkn&uuml;pfungen ist zwischen dem Lizenzgeber und -nehmer abzustimmen. </span>
+    </p>
+    <p>
+      <span lang="de-DE">4.4 Der Lizenznehmer verpflichtet sich, die Daten &uuml;ber die vorgesehene Nutzung hinaus nicht an Dritte weiterzugeben,
+        Dritten keinen Zugang zu diesen Daten zu gew&auml;hrleisten und sicherzustellen, dass eine unbefugte Nutzung ausgeschlossen
+        ist. </span>
+    </p>
+    <p>
+      <span lang="de-DE">4.5 Der Lizenznehmer verpflichtet sich weiterhin, die Daten nach vereinbartem Gebrauch bei sich zu l&ouml;schen, soweit
+        nicht etwas anderes f&uuml;r die Zweckerreichung des Vertrages zwingend erforderlich ist. Der Lizenzgeber ist auf
+        Nachfrage &uuml;ber die L&ouml;schung der Daten schriftlich zu informieren. Die geltenden datenschutzrechtlichen
+        Bestimmungen sind von beiden Vertragspartnern einzuhalten. </span>
+    </p>
+    <p>
+      <span lang="de-DE">4.6 Diese Regelung des &sect; 4 gilt - soweit anwendbar - auch f&uuml;r aggregierte Daten und auch f&uuml;r im Zuge
+        der Fahrplan&auml;nderungen neu zusammengestellte Daten, die aus den &uuml;berlassenen Daten erstellt wurden. </span>
+    </p>
+    <p>
+      <span lang="de-DE">4.7 Der Lizenznehmer erstattet in allen F&auml;llen dem Lizenzgeber eine Meldung, wenn durch ihn oder die bei ihm besch&auml;ftigten
+        Personen Verst&ouml;&szlig;e gegen Vorschriften zum Schutz der Daten des Lizenzgebers oder gegen die im Vertrag getroffenen
+        Festlegungen vorgefallen sind. </span>
+    </p>
+    <p>
+      <span lang="de-DE">4.8 Die Vertragspartner informieren sich unverz&uuml;glich &uuml;ber &Auml;nderungen ihrer gesellschaftsrechtlichen
+        Verh&auml;ltnisse, die Auswirkungen auf diese Vereinbarung haben k&ouml;nnen. </span>
+    </p>
+    <p>
+      <span lang="de-DE">4.9 Lizenznehmer und -geber sind sich einig, dass Fahrgastrechtsf&auml;lle auf Grund fehlender oder falscher Daten
+        sowie die materiellen Regelungen in Bezug auf Versp&auml;tungserstattungen - d. h. Auswertung in Bezug auf das Verursacherprinzip
+        etc. - im Rahmen der Fahrgastrechte nicht Gegenstand dieses Vertrags sind. </span>
+    </p>
+    <p>
+      <span lang="de-DE">&sect; 5 Kostenbeteiligung/Verg&uuml;tung: </span>
+    </p>
+    <p>
+      <span lang="de-DE">5.1 Die Nutzung der Schnittstelle ist grunds&auml;tzlich kostenfrei. </span>
+    </p>
+    <p>
+      <span lang="de-DE">5.2 Bei ungew&ouml;hnlich hohen Belastungen der Schnittstelle durch oder &uuml;ber den Lizenznehmer verst&auml;ndigen
+        sich Lizenznehmer und -geber &uuml;ber eine Kostenbeteiligung des Lizenznehmers. Wird hier&uuml;ber keine Einigkeit
+        erzielt, kann der Lizenzgeber gem&auml;&szlig; &sect; 7.2 k&uuml;ndigen. </span>
+    </p>
+    <p>
+      <span lang="de-DE">5.3 Sollte der Lizenznehmer Beratungs- und Unterst&uuml;tzungsleistungen seitens des Lizenzgebers ben&ouml;tigen, so
+        werden diese unter Zugrundelegung eines zwischen Lizenznehmer und -geber zu vereinbarenden Stundensatzes abgerechnet.
+        </span>
+    </p>
+    <p>
+      <span lang="de-DE">&sect; 6 Technische Anforderungen und Daten&uuml;bertragung: </span>
+    </p>
+    <p>
+      <span lang="de-DE">6.1 Die Zahl der Abrufe durch den Lizenznehmer kann seitens des Lizenzgebers technisch beschr&auml;nkt werden. Im Falle
+        einer Beschr&auml;nkung teilt der Lizenzgeber die Zahl der maximalen Einzelabfragen pro Stunde bzw. pro Tag dem Lizenznehmer
+        mit. </span>
+    </p>
+    <p>
+      <span lang="de-DE">6.2 Der Lizenznehmer gew&auml;hrleistet durch technische Sicherungsma&szlig;nahmen, dass ein massenhafter Abruf von
+        Daten &uuml;ber die Schnittstelle des Lizenzgebers verhindert wird, informiert den Lizenzgeber bei Sicherheitsproblemen
+        und ergreift n&ouml;tigenfalls entsprechende Ma&szlig;nahmen wie unverz&uuml;gliche Abschaltung oder Isolierung der
+        Schnittstelle bis zur nachweislichen Behebung des Problems. </span>
+    </p>
+    <p>
+      <span lang="de-DE">6.3 Wenn es &uuml;ber die Anwendung des Lizenznehmers zu einem Missbrauch oder zu sonstigen Einwirkungen auf die Schnittstelle
+        kommt, die die Funktionst&uuml;chtigkeit oder Reaktionszeit erheblich einschr&auml;nken, so hat der Lizenzgeber auf
+        einen entsprechenden Hinweis nach Ablauf einer angemessenen Frist das Recht, die Zahl der t&auml;glichen Abrufe oder
+        </span>
+    </p>
+    <p>
+      <span lang="de-DE">Einzelabfragen des Lizenznehmers durch ein einseitiges Bestimmungsrecht technisch und vertraglich auf eine angemessene
+        Zahl zu reduzieren. </span>
+    </p>
+    <p>
+      <span lang="de-DE">6.4 Der Lizenzgeber hat das Recht, den Zugang zu der Schnittstelle zu sperren, wenn es zu einem Missbrauch der Schnittstelle,
+        zu Sicherheitsrisiken oder zu sonstigen Einwirkungen auf das Fahrplanauskunftssystem kommt, die die Funktionst&uuml;chtigkeit
+        der Schnittstelle einschr&auml;nkt oder diese in irgendeiner Weise aussp&auml;ht, wenn diese nachweislich von dem
+        Lizenznehmer oder &uuml;ber von einer seiner Anwendungen ausgehen. Der Lizenzgeber wird die uneingeschr&auml;nkte
+        Bereitstellung der Daten fortsetzen, sobald die Ursache und das damit verbundene Problem beseitigt sind. </span>
+    </p>
+    <p>
+      <span lang="de-DE">6.5 Die Vertragspartner treffen die dem jeweiligen Stand der Technik &uuml;blichen und erforderlichen Vorkehrungen
+        zur Vermeidung von Sch&auml;den, die durch die &Uuml;bertragung der Daten kausal dadurch verursacht werden, dass
+        diese Daten Viren, trojanische Pferde oder &auml;hnliche Programme enthalten haben, die zu technischen Beeintr&auml;chtigungen,
+        Zerst&ouml;rungen der Server oder den Systemen der jeweils anderen Partei f&uuml;hren und die die liefernde Partei
+        zu vertreten hat. </span>
+    </p>
+    <p>
+      <span lang="de-DE">6.6 Der Client des Lizenznehmers muss sich die Daten vom Server des Lizenzgebers mittels einer gesicherten https-Anfrage
+        abholen. Diesen kann der Client f&uuml;r alle Folgeanfragen verwenden, bis die Zeit abgelaufen ist. </span>
+    </p>
+    <p>
+      <span lang="de-DE">&sect; 7 Laufzeit und K&uuml;ndigung: </span>
+    </p>
+    <p>
+      <span lang="de-DE">7.1 Der Lizenzgeber ist berechtigt, diese Vereinbarung &uuml;ber die Bereitstellung und Verwendung von Daten jederzeit
+        mit einer Frist von 2 Wochen vollst&auml;ndig einzustellen oder gegen&uuml;ber einem Lizenznehmer ordentlich zu k&uuml;ndigen.
+        </span>
+    </p>
+    <p>
+      <span lang="de-DE">7.2 Das Recht zur fristlosen K&uuml;ndigung aus wichtigem Grund bleibt unber&uuml;hrt. Ein wichtiger Grund liegt vor,
+        wenn dem k&uuml;ndigenden Teil ein Festhalten an der Vereinbarung nicht zugemutet werden kann. Ein wichtiger Grund
+        des Lizenzgebers ist ohne weiteres anzunehmen, wenn der Lizenznehmer gegen die Bedingungen dieser Nutzungsvereinbarung
+        verst&ouml;&szlig;t. </span>
+    </p>
+    <p>
+      <span lang="de-DE">7.3 Mit Beendigung der Vereinbarung enden s&auml;mtliche Nutzungsrechte. Nach Beendigung der Vereinbarung wird der
+        Lizenznehmer unverz&uuml;glich alle Daten, die der Lizenzgeber &uuml;berlassen hat, vollst&auml;ndig auf ihren Datenverarbeitungssystem
+        und Datentr&auml;gern l&ouml;schen. Die &uuml;bliche Datensicherung und Archivierung bleibt unber&uuml;hrt. </span>
+    </p>
+    <p>
+      <span lang="de-DE">&sect; 8 Gew&auml;hrleistungs- und Haftungsbeschr&auml;nkung: </span>
+    </p>
+    <p>
+      <span lang="de-DE">8.1 Der Lizenzgeber stellt die Daten so bereit, wie sie ihm vorliegen. Eine Gew&auml;hrleistung und Haftung f&uuml;r
+        die Eigentumsverh&auml;ltnisse, Fehlerfreiheit oder Vollst&auml;ndigkeit, die Eignung f&uuml;r einen bestimmten Zweck
+        oder andere Umst&auml;nde werden deshalb insofern ausdr&uuml;cklich ausgeschlossen. </span>
+    </p>
+    <p>
+      <span lang="de-DE">8.2. Ansonsten haften Lizenznehmer und -geber gegenseitig f&uuml;r alle selbst oder durch Erf&uuml;llungs- und Verrichtungsgehilfen
+        verursachten Sch&auml;den nur, soweit diese Sch&auml;den auf Vorsatz oder grober Fahrl&auml;ssigkeit beruhen, und
+        stellen die andere Partei bei einer Inanspruchnahme infolge einer von Ihnen begangenen Pflichtverletzung von Anspr&uuml;chen
+        Dritter frei. Eine Haftung f&uuml;r einfache Fahrl&auml;ssigkeit besteht daneben nur unter den gesetzlichen Voraussetzungen
+        und nur bei einer Verletzung wesentlicher Vertragspflichten und ist auf den vorhersehbaren und typischerweise eintretenden
+        Schaden beschr&auml;nkt. Wesentliche Vertragspflichten sind solche, deren Erf&uuml;llung die ordnungsgem&auml;&szlig;e
+        Durchf&uuml;hrung des Vertrages &uuml;berhaupt erst erm&ouml;glicht und auf deren Einhaltung die andere Partei regelm&auml;&szlig;ig
+        vertrauen darf. </span>
+    </p>
+    <p>
+      <span lang="de-DE">8.3 Diese Beschr&auml;nkungen gelten nicht im Rahmen &uuml;bernommener Garantien, f&uuml;r Verletzungen des Lebens,
+        des K&ouml;rpers und der Gesundheit sowie f&uuml;r Anspr&uuml;che aus dem Produkthaftungsgesetz. </span>
+    </p>
+    <p>&sect; 9 &Auml;nderungsvorbehalt:</p>
+    <p>
+      <span lang="de-DE">9.1 Der Lizenzgeber beh&auml;lt sich das Recht vor, jederzeit &Auml;nderungen oder Erg&auml;nzungen vorliegender Nutzungsvereinbarung
+        vorzunehmen. Der Lizenznehmer wird per E-Mail &uuml;ber etwaige &Auml;nderungen informiert. </span>
+    </p>
+    <p>
+      <span lang="de-DE">9.2 Die &Auml;nderungen gelten als genehmigt, wenn der Lizenznehmer diesen nicht innerhalb von 6 Wochen nach Bekanntgabe
+        der widerspricht. Auf diese Folge wird der Lizenznehmer bei der Bekanntgabe ausdr&uuml;cklich hingewiesen. </span>
+    </p>
+    <p>
+      <span lang="de-DE">&sect; 10 Schlussbestimmungen: </span>
+    </p>
+    <p>
+      <span lang="de-DE">10.1 Zuk&uuml;nftige &Auml;nderungen und Erg&auml;nzungen bed&uuml;rfen zur Wirksamkeit der Schriftform, was auch f&uuml;r
+        eine Aufhebung der Schriftform gilt. Die Textform gen&uuml;gt nicht. </span>
+    </p>
+    <p>
+      <span lang="de-DE">10.2 Es gilt ausschlie&szlig;lich das Recht der Bundesrepublik Deutschland. Ausschlie&szlig;licher Gerichtsstand ist
+        Gelsenkirchen, gesetzlich zwingende Gerichtsst&auml;nde bleiben unber&uuml;hrt. </span>
+    </p>
+    <p>
+      <span lang="de-DE">Version, Stand: 1.0, 16.04.2018</span>
+    </p>
   </div>
 </article>
 {% endblock %}

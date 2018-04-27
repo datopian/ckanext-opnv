@@ -1,45 +1,58 @@
-{% extends "page.html" %}
-
-{% block primary %}
-<article class="module">
-  <div class="module-content">
-    <h1>Netiquette</h1>
-    <pre>
-      Geltungsbereich
-
-      Die vorliegenden Bedingungen entfalten Geltung für das unter der Domain www.OpenData-oepnv.de bereitgehaltene Internetportal (im Folgenden: „Portal“).
-
-      Betrieb, Verantwortliche, Links und Inhalte Dritter
-
-      (1) Das Portal bietet Ihnen einen Zugang zu den als OpenData veröffentlichten Daten der an der Initiative beteiligten Verkehrsverbünde (im Folgenden: „Initiative“), welche Betreiber dieses Portals sind.
-
-      (2) Das Hosting und die technische Umsetzung des Portals erfolgt durch die Viderum GmbH.
-
-      (3) Für die im Portal bereitgestellten Daten und deren Lizenzierung an Abnehmer ist ausschließlich der jeweilige Verkehrsverbund zuständig.
-
-      (4) Das Portal kann Links zu externen Webseiten Dritter enthalten. Auf diese Inhalte hat die Initiative keinen Einfluss und kann keine Gewähr für diese übernehmen. Die Verantwortlichkeit liegt grundsätzlich beim Anbieter des externen Webangebotes. Die Initiative hat diese externen Webangebote auf etwaige Rechtsverstöße überprüft. Eine permanente Kontrolle der verlinkten Seiten ist jedoch ohne Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Sobald der Initiative derartige Anhaltspunkte bekannt werden, wird sie derartige Links unverzüglich entfernen.
-
-      Weiterentwicklung des Portals, Änderungsvorbehalt
-
-      (1) Da sich das Portal in einer stetigen Weiterentwicklung befindet, behält sich die Initiative das Recht vor, die dort angebotenen Dienste jederzeit zu ändern, einzuschränken, ganz einzustellen oder abweichende Dienste anzubieten. Weder Erreichbarkeit noch Verfügbarkeit der Server noch die inhaltliche Richtigkeit jedweder vorgehaltener Daten werden gewährleistet. Ebenso kann die Initiative die vorgehaltenen Daten und deren Lizenzierung jederzeit und ohne Vorankündigung ändern.
-
-      (2) Die Initiative behält sich auch das Recht vor, diese Nutzungsbedingungen jederzeit zu verändern.
-
-      Untersagte Nutzungsarten, Haftungs- und Gewährleistungsausschluss
-
-      (1) Es ist Ihnen untersagt, bei der Nutzung dieses Portals Software oder sonstige Mechanismen zu verwenden, die zu einer Störung des Betriebes dieses Portals führen können. Dazu gehört insbesondere auch die übermäßige oder unzumutbare Belastung der technischen Infrastruktur. Die Initiative behält sich die jederzeitige Beschränkung oder Verwehrung des Zugangs zum Portal vor.
-
-      (2) Sie akzeptieren durch die Nutzung des Portals diese Bedingungen und bei der Datennutzung deren Lizenzbestimmungen und sind für die Nutzung der bereitgestellten Daten und Inhalte, sowie für die Einhaltung der Lizenzbestimmungen, allein verantwortlich.
-
-      (3) Die Daten und sonstigen Inhalte dieses Portals werden von der Initiative ohne jede Gewähr bereitgestellt. Eine Verantwortlichkeit für deren Fehlerfreiheit, Eignung für einen bestimmten Zweck, Freiheit von Rechten Dritter, Aktualität oder Aktualisierung besteht seitens der Initiative ausdrücklich nicht. Die Initiative haftet auch nicht für Schäden, die durch die Datennutzung entstehen oder die beim Abrufen oder Herunterladen von Inhalten dieses Portals durch Schadprogramme verursacht werden. Diese Beschränkungen gelten nicht im Rahmen übernommener Garantien, für Verletzungen des Lebens, des Körpers und der Gesundheit sowie für Ansprüche aus dem Produkthaftungsgesetz.
-
-      Hinweise zu Schutzrechten
-
-      Die Initiative gewährt keine Rechte, die über die durch die jeweilige Lizenz eingeräumten Nutzungsrechte hinausgehen. Marken-, Design-, sonstige gewerbliche Schutzrechte und das Urheberrecht sind von Ihnen zu beachten. Die Verwendung von Marken der Initiative ist ohne ihre vorherige schriftliche Zustimmung ausdrücklich untersagt.
-
-      Nutzung des Fahrgastinformationssystems Für die Nutzung des Fahrgastinformationssystems gelten die Nutzungsbedingungen API.
-    </pre>
-  </div>
-</article>
-{% endblock %}
-{% block secondary %}{% endblock %}
+{% extends "page.html" %} {% set page_title = _('Netiquette') %} {% block subtitle %}{{ page_title }}{% endblock %} {% block
+  breadcrumb_content %}
+  <li class="active">
+    <a href="{{ h.url_for('netiquette')}}">{{ page_title }}</a>
+  </li>
+  {% endblock %} {% block primary %}
+  <article class="module">
+    <div class="module-content">
+      <h1>{{ page_title }}</h1>
+      <p>Geltungsbereich</p>
+      <p>Die vorliegenden Bedingungen entfalten Geltung f&uuml;r das unter der Domain www.OpenData-oepnv.de bereitgehaltene Internetportal
+        (im Folgenden: &bdquo;Portal&ldquo;).</p>
+      <p>Betrieb, Verantwortliche, Links und Inhalte Dritter</p>
+      <p>(1) Das Portal bietet Ihnen einen Zugang zu den als OpenData ver&ouml;ffentlichten Daten der an der Initiative beteiligten
+        Verkehrsverb&uuml;nde (im Folgenden: &bdquo;Initiative&ldquo;), welche Betreiber dieses Portals sind.</p>
+      <p>(2) Das Hosting und die technische Umsetzung des Portals erfolgt durch die Viderum GmbH.</p>
+      <p>(3) F&uuml;r die im Portal bereitgestellten Daten und deren Lizenzierung an Abnehmer ist ausschlie&szlig;lich der jeweilige
+        Verkehrsverbund zust&auml;ndig.</p>
+      <p>(4) Das Portal kann Links zu externen Webseiten Dritter enthalten. Auf diese Inhalte hat die Initiative keinen Einfluss
+        und kann keine Gew&auml;hr f&uuml;r diese &uuml;bernehmen. Die Verantwortlichkeit liegt grunds&auml;tzlich beim Anbieter
+        des externen Webangebotes. Die Initiative hat diese externen Webangebote auf etwaige Rechtsverst&ouml;&szlig;e &uuml;berpr&uuml;ft.
+        Eine permanente Kontrolle der verlinkten Seiten ist jedoch ohne Anhaltspunkte einer Rechtsverletzung nicht zumutbar.
+        Sobald der Initiative derartige Anhaltspunkte bekannt werden, wird sie derartige Links unverz&uuml;glich entfernen.</p>
+      <p>Weiterentwicklung des Portals, &Auml;nderungsvorbehalt</p>
+      <p>(1) Da sich das Portal in einer stetigen Weiterentwicklung befindet, beh&auml;lt sich die Initiative das Recht vor, die
+        dort angebotenen Dienste jederzeit zu &auml;ndern, einzuschr&auml;nken, ganz einzustellen oder abweichende Dienste
+        anzubieten. Weder Erreichbarkeit noch Verf&uuml;gbarkeit der Server noch die inhaltliche Richtigkeit jedweder vorgehaltener
+        Daten werden gew&auml;hrleistet. Ebenso kann die Initiative die vorgehaltenen Daten und deren Lizenzierung jederzeit
+        und ohne Vorank&uuml;ndigung &auml;ndern.</p>
+      <p>(2) Die Initiative beh&auml;lt sich auch das Recht vor, diese Nutzungsbedingungen jederzeit zu ver&auml;ndern.</p>
+      <p>Untersagte Nutzungsarten, Haftungs- und Gew&auml;hrleistungsausschluss</p>
+      <p>(1) Es ist Ihnen untersagt, bei der Nutzung dieses Portals Software oder sonstige Mechanismen zu verwenden, die zu einer
+        St&ouml;rung des Betriebes dieses Portals f&uuml;hren k&ouml;nnen. Dazu geh&ouml;rt insbesondere auch die &uuml;berm&auml;&szlig;ige
+        oder unzumutbare Belastung der technischen Infrastruktur. Die Initiative beh&auml;lt sich die jederzeitige Beschr&auml;nkung
+        oder Verwehrung des Zugangs zum Portal vor.</p>
+      <p>(2) Sie akzeptieren durch die Nutzung des Portals diese Bedingungen und bei der Datennutzung deren Lizenzbestimmungen
+        und sind f&uuml;r die Nutzung der bereitgestellten Daten und Inhalte, sowie f&uuml;r die Einhaltung der Lizenzbestimmungen,
+        allein verantwortlich.</p>
+      <p>(3) Die Daten und sonstigen Inhalte dieses Portals werden von der Initiative ohne jede Gew&auml;hr bereitgestellt. Eine
+        Verantwortlichkeit f&uuml;r deren Fehlerfreiheit, Eignung f&uuml;r einen bestimmten Zweck, Freiheit von Rechten Dritter,
+        Aktualit&auml;t oder Aktualisierung besteht seitens der Initiative ausdr&uuml;cklich nicht. Die Initiative haftet auch
+        nicht f&uuml;r Sch&auml;den, die durch die Datennutzung entstehen oder die beim Abrufen oder Herunterladen von Inhalten
+        dieses Portals durch Schadprogramme verursacht werden. Diese Beschr&auml;nkungen gelten nicht im Rahmen &uuml;bernommener
+        Garantien, f&uuml;r Verletzungen des Lebens, des K&ouml;rpers und der Gesundheit sowie f&uuml;r Anspr&uuml;che aus
+        dem Produkthaftungsgesetz.</p>
+      <p>Hinweise zu Schutzrechten</p>
+      <p>Die Initiative gew&auml;hrt keine Rechte, die &uuml;ber die durch die jeweilige Lizenz einger&auml;umten Nutzungsrechte
+        hinausgehen. Marken-, Design-, sonstige gewerbliche Schutzrechte und das Urheberrecht sind von Ihnen zu beachten. Die
+        Verwendung von Marken der Initiative ist ohne ihre vorherige schriftliche Zustimmung ausdr&uuml;cklich untersagt.</p>
+      <p>Nutzung des Fahrgastinformationssystems</p>
+      <p>F&uuml;r die Nutzung des Fahrgastinformationssystems gelten die
+        <a href="https://wolke.vrr.de/node_share_links/94?token=2eb18e49-f5a3-4a97-b334-0b9a5e49b416">
+          <u>Nutzungsbedingungen API</u>
+        </a>.</p>
+    </div>
+  </article>
+  {% endblock %} {% block secondary %}{% endblock %}
+  

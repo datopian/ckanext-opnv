@@ -1,16 +1,23 @@
 {% extends "page.html" %}
 
+{% set page_title = _('Kontakt') %}
+
+{% block subtitle %}{{ page_title }}{% endblock %}
+
+{% block breadcrumb_content %}
+  <li class="active"> <a href="{{ h.url_for('kontakt')}}">{{ page_title }}</a></li>
+{% endblock %}
+
 {% block primary %}
 <article class="module">
   <div class="module-content">
-    <h1>Kontakt
-</h1>
-    <pre>
-      Verkehrsverbund Rhein-Ruhr AöR Augustastraße 1 45879 Gelsenkirchen
-
-      Telefon: +49 209 1584-0
-
-      Telefax: +49 209 23967 Internet: www.vrr.de  </div>
+    <h1>Kontakt</h1>
+    <p>Verkehrsverbund Rhein-Ruhr AöR Augustastraße 1 45879 Gelsenkirchen</p>
+    <p>Telefon: +49 209 1584-0</p>
+    <p>Telefax: +49 209 23967</p>
+    <p>Internet: www.vrr.de </p>
+  </div>
 </article>
 {% endblock %}
+
 {% block secondary %}{% endblock %}
