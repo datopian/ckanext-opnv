@@ -5,13 +5,13 @@
         <ul class="unstyled">
             <li class="footer-title">Hinweise</li>
             <li>
-                <a href="#">Impressum</a>
+                <a href="{{ h.url_for('impressum')}}">Impressum</a>
             </li>
             <li>
-                <a href="#">Datenschutz</a>
+                <a href="{{ h.url_for('datenschutz')}}">Datenschutz</a>
             </li>
             <li>
-                <a href="#">Kontakt</a>
+                <a href="{{ h.url_for('kontakt')}}">Kontakt</a>
             </li>
         </ul>
     </div>
@@ -21,10 +21,10 @@
                 Spielregeln
             </li>
             <li>
-                <a href="#">Nutzungsvereinbarungen</a>
+                <a href="{{ h.url_for('nutzungsvereinbarungen')}}">Nutzungsvereinbarungen</a>
             </li>
             <li>
-                <a href="#">Netiquette</a>
+                <a href="{{ h.url_for('netiquette')}}">Netiquette</a>
             </li>
         </ul>
     </div>

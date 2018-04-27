@@ -27,6 +27,16 @@ class OpnvPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     def configure(self, config):
         user_extra_model_setup()
 
+    def before_map(self, map):
+        static_ctrl = 'ckanext.opnv.controllers:StaticController'
+        map.connect('impressum', '/impressum', controller=static_ctrl, action='impressum')
+        map.connect('datenschutz', '/datenschutz', controller=static_ctrl, action='datenschutz')
+        map.connect('kontakt', '/kontakt', controller=static_ctrl, action='kontakt')
+        map.connect('nutzungsvereinbarungen', '/nutzungsvereinbarungen', controller=static_ctrl, action='nutzungsvereinbarungen')
+        map.connect('netiquette', '/netiquette', controller=static_ctrl, action='netiquette')
+
+        return map
+
     def get_auth_functions(self):
         auth_functions = {
             'user_extra_create': ckanext.opnv.auth.user_extra_create,
