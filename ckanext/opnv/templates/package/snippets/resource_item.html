@@ -45,8 +45,10 @@
       </li>
       {% if res.url and h.is_url(res.url) %}
       <li>
-         {% if not c.user and pkg.registered_only != 'Default'%}
-           <a data-toggle="modal" data-target="#register">
+      {% if not c.user and pkg.registered_only != 'Default' %}
+      <a data-toggle="modal" data-target="#register">
+        {% elif not c.user %}
+        <a data-toggle="modal" data-target="#terms-download">
          {% else %}
         <a href="{{ res.url }}" class="resource-url-analytics" target="_blank">
           {% endif %}
@@ -77,4 +79,8 @@
 
 {% block dataset_registered_only %}
   {% snippet "package/snippets/register.html", res=res %}
+{% endblock %}
+
+{% block dataset_terms %}
+  {% snippet "package/snippets/terms-download.html", res=res %}
 {% endblock %}
