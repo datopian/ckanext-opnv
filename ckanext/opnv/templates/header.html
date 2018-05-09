@@ -7,7 +7,26 @@
   <div class="container-fluid">
     <div class="row-fluid">
       <div class="span10 offset1">
-        {% block header_account_container_content %} {{ super() }} {% endblock %}
+        {% block header_account_container_content %}
+          {% if c.userobj %}
+            <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}">
+              <ul class="unstyled">
+                {% block header_account_logged %} {{ super() }}
+                {% block header_account_settings_link %} {{ super() }} {% endblock %}
+                {% block header_account_log_out_link %} {{ super() }} {% endblock %}
+                {% endblock %}
+              </ul>
+            </div>
+          {% else %}
+            <nav class="account not-authed">
+              <ul class="unstyled">
+                {% block header_account_notlogged %}
+                <li>{% link_for _('Log in'), controller='user', action='login' %}</li>
+                {% endblock %}
+              </ul>
+            </nav>
+          {% endif %}
+        {% endblock %}
       </div>
     </div>
   </div>
@@ -39,7 +58,7 @@
           <nav class="section navigation">
             <ul class="nav">
               {% block header_site_navigation_tabs %} {{ h.build_nav_main( ('search', _('Datasets')), ('organizations_index', _('Organizations')),
-              ('group_index', _('Groups')), ('about', _('About')) ) }} {% endblock %}
+              ('about', _('About')) ) }} {% endblock %}
             </ul>
           </nav>
           {% endblock %}
