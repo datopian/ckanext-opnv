@@ -1,11 +1,11 @@
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
+from ckan.config.routing import SubMapper
 
 import ckanext.opnv.action
 import ckanext.opnv.auth
 from ckanext.opnv.model import setup as user_extra_model_setup
 import ckanext.opnv.helpers as opnv_helpers
-
 
 
 class OpnvPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
@@ -15,6 +15,7 @@ class OpnvPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     plugins.implements(plugins.IDatasetForm)
     plugins.implements(plugins.IActions)
     plugins.implements(plugins.ITemplateHelpers)
+    plugins.implements(plugins.IRoutes, inherit=True)
 
 
     # IConfigurer
@@ -28,13 +29,10 @@ class OpnvPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
         user_extra_model_setup()
 
     def before_map(self, map):
-        static_ctrl = 'ckanext.opnv.controllers:StaticController'
-        map.connect('impressum', '/impressum', controller=static_ctrl, action='impressum')
-        map.connect('datenschutz', '/datenschutz', controller=static_ctrl, action='datenschutz')
-        map.connect('kontakt', '/kontakt', controller=static_ctrl, action='kontakt')
-        map.connect('nutzungsvereinbarungen', '/nutzungsvereinbarungen', controller=static_ctrl, action='nutzungsvereinbarungen')
-        map.connect('netiquette', '/netiquette', controller=static_ctrl, action='netiquette')
-
+        user_ctrl = 'ckan.controllers.user:UserController'
+        map.redirect('/user/register', '/user/login')
+        with SubMapper(map, controller=user_ctrl) as m:
+            m.connect('register', '/user/_register_partner', action='register')
         return map
 
     def get_auth_functions(self):
