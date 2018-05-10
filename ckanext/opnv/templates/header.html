@@ -12,8 +12,6 @@
             <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}">
               <ul class="unstyled">
                 {% block header_account_logged %} {{ super() }}
-                {% block header_account_settings_link %} {{ super() }} {% endblock %}
-                {% block header_account_log_out_link %} {{ super() }} {% endblock %}
                 {% endblock %}
               </ul>
             </div>
