@@ -1,0 +1,40 @@
+# German translations for ckanext-opnv.
+# Copyright (C) 2018 ORGANIZATION
+# This file is distributed under the same license as the ckanext-opnv
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ckanext-opnv 0.0.1\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2018-05-11 14:49+0200\n"
+"PO-Revision-Date: 2018-05-11 14:50+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ckanext/opnv/templates/package/snippets/additional_info.html:70
+msgid "Dataset availability"
+msgstr ""
+
+#: ckanext/opnv/templates/package/snippets/package_metadata_fields.html:16
+msgid "Availability"
+msgstr ""
+
+#: ckanext/opnv/templates/package/snippets/register.html:4
+msgid "Dataset is for registered users only"
+msgstr "Datensatz ist nur für registrierte Benutzer"
+
+#: ckanext/opnv/templates/package/snippets/register.html:7
+msgid "In order to view/download the resource, you must "
+msgstr "Um die Ressource anzeigen / herunterladen zu können, müssen Sie sich"
+
+#: ckanext/opnv/templates/package/snippets/register.html:7
+msgid "register"
+msgstr "registrieren"

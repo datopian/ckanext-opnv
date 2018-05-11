@@ -1,6 +1,8 @@
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 from ckan.config.routing import SubMapper
+from ckan.lib.plugins import DefaultTranslation
+
 
 import ckanext.opnv.action
 import ckanext.opnv.auth
@@ -8,7 +10,7 @@ from ckanext.opnv.model import setup as user_extra_model_setup
 import ckanext.opnv.helpers as opnv_helpers
 
 
-class OpnvPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
+class OpnvPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm, DefaultTranslation):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IConfigurable)
     plugins.implements(plugins.IAuthFunctions, inherit=True)
@@ -16,7 +18,7 @@ class OpnvPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     plugins.implements(plugins.IActions)
     plugins.implements(plugins.ITemplateHelpers)
     plugins.implements(plugins.IRoutes, inherit=True)
-
+    plugins.implements(plugins.ITranslation)
 
     # IConfigurer
 
@@ -56,7 +58,7 @@ class OpnvPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
             'get_page_title': opnv_helpers.get_page_title,
             'org_list': opnv_helpers.org_list,
             'get_org_dict': opnv_helpers.get_org_dict
-                }
+        }
         return helper_functions
 
     def _modify_package_schema(self, schema):
