@@ -38,3 +38,12 @@ msgstr "Um die Ressource anzeigen / herunterladen zu können, müssen Sie sich"
 #: ckanext/opnv/templates/package/snippets/register.html:7
 msgid "register"
 msgstr "registrieren"
+
+#: ckanext/opnv/templates/user/new_user_form.html:9
+#: ckanext/opnv/templates/user/read_base.html:92
+msgid "Project description"
+msgstr "Kurzbeschreibung des geplanten Projektes"
+
+#: ckanext/opnv/templates/user/new_user_form.html:9
+msgid "For project etc."
+msgstr ""
