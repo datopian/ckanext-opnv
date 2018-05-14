@@ -1,7 +1,6 @@
 import logging
 import json
 import socket
-from pprint import pprint
 
 from paste.deploy.converters import asbool
 
@@ -19,7 +18,6 @@ import ckan.lib.navl.dictization_functions as df
 from ckanext.opnv.model import UserExtra
 from ckanext.opnv.user_schema import user_extra_schema
 from ckanext.opnv.user_schema import user_extra_delete_schema
-from pylons import c
 
 # Define some shortcuts
 # Ensure they are module-private so that they don't get loaded as available
@@ -49,22 +47,19 @@ def user_extra_create(context, data_dict):
 
         '''
 
-    logic.check_access('user_extra', context, data_dict)
     data, errors = df.validate(data_dict, user_extra_schema(), context)
 
     if errors:
         raise toolkit.ValidationError(errors)
 
-    model = context.get('model')
-    user = context.get('user')
-    user_obj = model.User.get(user)
+    user_obj = context.get('user_obj')
 
     user_id = user_obj.id
     key = data.get('key')
     value = data.get('value')
     state = data.get('state', 'active')
 
-    user_extra = UserExtra.get(user_id, key)
+    user_extra = UserExtra.get(user_id=user_id, key=key)
     if user_extra:
         user_extra.key = key
         user_extra.value = value
@@ -88,25 +83,19 @@ def user_extra_read(context, data_dict):
         :type key: string
 
         '''
-
-    logic.check_access('user_extra', context, data_dict)
     data, errors = df.validate(data_dict, user_extra_delete_schema(), context)
-
     if errors:
         raise toolkit.ValidationError(errors)
 
-    model = context.get('model')
-    user = context.get('user')
-    user_obj = model.User.get(user)
-
-    user_id = user_obj.id
+    user_id = data_dict.get('user_id')
     key = data.get('key')
 
-    user_extra = UserExtra.get(user_id, key)
-    if user_extra is None:
-        return user_extra
+    user_extra = UserExtra.get(user_id=user_id, key=key)
 
-    return _table_dictize(user_extra, context)
+    if user_extra is not None:
+        return _table_dictize(user_extra, context)
+    else:
+        return None
 
 
 def user_extra_update(context, data_dict):

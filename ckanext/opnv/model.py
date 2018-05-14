@@ -32,11 +32,15 @@ def setup():
 class UserExtra(model.DomainObject):
 
     @classmethod
-    def get(cls, **kw):
-        """Finds single instance."""
+    def get(cls, user_id, key, default=None):
+        '''Finds a single entity in the register.'''
+        kw = {'user_id': user_id, 'key': key}
         query = model.Session.query(cls).autoflush(False)
         result = query.filter_by(**kw).first()
-        return result
+        if result:
+            return result
+        else:
+            return default
 
     @classmethod
     def extra_exists(cls, key):
@@ -58,9 +62,13 @@ class UserExtra(model.DomainObject):
 def define_user_extra_table():
     global user_extra
     user_extra = sa.Table('user_extra', model.meta.metadata,
-                          sa.Column('id', sa.types.UnicodeText, primary_key=True, default=uuid4),
-                          sa.Column('user_id', sa.types.UnicodeText, sa.ForeignKey('user.id')),
-                          sa.Column('key', sa.types.UnicodeText), sa.Column('value', sa.types.UnicodeText),
-                          sa.Column('state', sa.types.UnicodeText, default='active'),
+                          sa.Column('id', sa.types.UnicodeText,
+                                    primary_key=True, default=uuid4),
+                          sa.Column('user_id', sa.types.UnicodeText,
+                                    sa.ForeignKey('user.id')),
+                          sa.Column('key', sa.types.UnicodeText), sa.Column(
+                              'value', sa.types.UnicodeText),
+                          sa.Column('state', sa.types.UnicodeText,
+                                    default=u'active'),
                           )
     model.meta.mapper(UserExtra, user_extra)
