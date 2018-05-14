@@ -1,5 +1,5 @@
 import ckan.plugins.toolkit as toolkit
-
+from ckan import model
 _ = toolkit._
 
 
@@ -36,4 +36,5 @@ def user_project_description(user):
     if user:
         desc = toolkit.get_action('user_extra_read')(
             {}, {'key': 'description', 'user_id': user['id']})
-    return desc.get('value', None)
+        if desc:
+            return desc.get('value', None)
