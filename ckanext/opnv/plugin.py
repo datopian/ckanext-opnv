@@ -5,7 +5,6 @@ from ckan.lib.plugins import DefaultTranslation
 
 
 import ckanext.opnv.action
-from ckanext.opnv.model import setup as user_extra_model_setup
 import ckanext.opnv.helpers as opnv_helpers
 
 
@@ -27,10 +26,10 @@ class OpnvPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm, DefaultTra
         toolkit.add_resource('fanstatic', 'opnv')
 
     def configure(self, config):
-        user_extra_model_setup()
+        return
 
     def before_map(self, map):
-        user_ctrl = 'ckanext.opnv.controller:OpnvUserController'
+        user_ctrl = 'ckan.controllers.user:UserController'
         map.redirect('/user/register', '/user/login')
         with SubMapper(map, controller=user_ctrl) as m:
             m.connect('register', '/user/_register_partner', action='register')
@@ -43,11 +42,7 @@ class OpnvPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm, DefaultTra
     def get_actions(self):
         action_functions = {
             'package_show':
-                ckanext.opnv.action.package_show,
-            'user_extra_create':
-                ckanext.opnv.action.user_extra_create,
-            'user_extra_read':
-                ckanext.opnv.action.user_extra_read
+                ckanext.opnv.action.package_show
         }
 
         return action_functions
@@ -57,7 +52,6 @@ class OpnvPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm, DefaultTra
             'get_page_title': opnv_helpers.get_page_title,
             'org_list': opnv_helpers.org_list,
             'get_org_dict': opnv_helpers.get_org_dict,
-            'user_project_description': opnv_helpers.user_project_description
         }
         return helper_functions
 
