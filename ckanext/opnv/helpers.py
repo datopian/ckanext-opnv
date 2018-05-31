@@ -29,12 +29,3 @@ def org_list():
 
 def get_org_dict(org):
     return toolkit.get_action('organization_show')({}, {'id': org})
-
-
-def user_project_description(user):
-    desc = None
-    if user:
-        desc = toolkit.get_action('user_extra_read')(
-            {}, {'key': 'description', 'user_id': user['id']})
-        if desc:
-            return desc.get('value', None)
