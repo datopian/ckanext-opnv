@@ -72,6 +72,10 @@
                   </ul>
                 </div>
                 {% endif %}
+                {% block stats %}
+                  {% snippet 'home/snippets/stat.html' %}
+                {% endblock %}
+
               </div>
             </div>
           </div>
