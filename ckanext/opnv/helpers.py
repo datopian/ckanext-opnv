@@ -13,7 +13,6 @@ def get_page_title():
         'ckanext.showcase.controller:ShowcaseController': _("Showcases"),
         'about': _("About")
     }
-    print "p: ", p, "tv: ", titles.viewkeys()
     if p & titles.viewkeys():
         title = p & titles.viewkeys()
         for t in title:
