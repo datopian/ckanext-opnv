@@ -13,12 +13,11 @@ def get_page_title():
         'ckanext.showcase.controller:ShowcaseController': _("Showcases"),
         'about': _("About")
     }
-
+    print "p: ", p, "tv: ", titles.viewkeys()
     if p & titles.viewkeys():
-        try:
-            return titles[p[0]]
-        except KeyError:
-            return titles[p[1]]
+        title = p & titles.viewkeys()
+        for t in title:
+            return titles[t]
     else:
         return None
 
