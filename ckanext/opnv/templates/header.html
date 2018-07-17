@@ -1,8 +1,28 @@
+{% resource 'opnv/js/modules/dismiss-ga-message.js' %}
+{% resource 'opnv/js/modules/opt-out-ga.js' %}
+
 {% ckan_extends %}
 
 {% block header_wrapper %}
 
 {% block header_account %}
+
+{% set locale = h.lang() %}
+
+{% if h.is_mobile_device() %}
+  <div class="ga-opt-out mobile" data-ga-id="{{ h.get_googleanalytics_id() }}">
+    {% trans %}
+      Click <a href="#">here</a> to opt-out from Google Analytics tracking.
+    {% endtrans %}
+  </div>
+{% else %}
+  <div class="ga-opt-out">
+    {% trans %}
+      You can opt-out from Google Analytics tracking by installing a <a href="https://tools.google.com/dlpage/gaoptout?hl={{ locale }}" target="_blank" data-module="opnv-dismiss-ga-message">browser extension</a>.
+      Click <a href="#" data-module="opnv-dismiss-ga-message">here</a> to dismiss.
+    {% endtrans %}
+  </div>
+{% endif %}
 <header class="account-masthead">
   <div class="container-fluid">
     <div class="row-fluid">

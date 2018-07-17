@@ -1,5 +1,8 @@
+import re
+
 import ckan.plugins.toolkit as toolkit
 from ckan import model
+from ckan.common import config
 _ = toolkit._
 
 
@@ -36,3 +39,17 @@ def user_project_description(user):
             {}, {'key': 'description', 'user_id': user['id']})
         if desc:
             return desc.get('value', None)
+
+
+def is_mobile_device():
+    MOBILE_AGENT_RE =\
+        re.compile(r".*(iphone|ipad|mobile|androidtouch)", re.IGNORECASE)
+
+    if MOBILE_AGENT_RE.match(toolkit.request.user_agent):
+        return True
+
+    return False
+
+
+def get_googleanalytics_id():
+    return config.get('googleanalytics.id')

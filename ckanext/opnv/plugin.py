@@ -57,7 +57,9 @@ class OpnvPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm, DefaultTra
             'get_page_title': opnv_helpers.get_page_title,
             'org_list': opnv_helpers.org_list,
             'get_org_dict': opnv_helpers.get_org_dict,
-            'user_project_description': opnv_helpers.user_project_description
+            'user_project_description': opnv_helpers.user_project_description,
+            'is_mobile_device': opnv_helpers.is_mobile_device,
+            'get_googleanalytics_id': opnv_helpers.get_googleanalytics_id,
         }
         return helper_functions
 
