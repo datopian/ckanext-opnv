@@ -34,13 +34,6 @@ class OpnvPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm, DefaultTra
         map.redirect('/user/register', '/user/login')
         with SubMapper(map, controller=user_ctrl) as m:
             m.connect('register', '/user/_register_partner', action='register')
-            map.connect('user_index', '/user',
-                        controller=user_ctrl, action='index')
-            m.connect('/user/activity/{id}/{offset}', action='activity')
-            m.connect('user_activity_stream', '/user/activity/{id}',
-                      action='activity', ckan_icon='time')
-            m.connect('request_reset', '/user/reset', action='request_reset')
-            m.connect('/user/reset/{id:.*}', action='perform_reset')
         return map
 
     def get_auth_functions(self):
@@ -54,15 +47,7 @@ class OpnvPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm, DefaultTra
             'user_extra_create':
                 ckanext.opnv.action.user_extra_create,
             'user_extra_read':
-                ckanext.opnv.action.user_extra_read,
-            'user_list':
-                ckanext.opnv.action.user_list,
-            'user_show':
-                ckanext.opnv.action.user_show,
-            'user_list_gdpr':
-                ckanext.opnv.action.user_list_gdpr,
-            'user_show_gdpr':
-                ckanext.opnv.action.user_show_gdpr
+                ckanext.opnv.action.user_extra_read
         }
 
         return action_functions
