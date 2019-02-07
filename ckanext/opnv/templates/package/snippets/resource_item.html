@@ -48,7 +48,7 @@
       {% if not c.user and pkg.registered_only != 'Default' %}
       <a data-toggle="modal" data-target="#register">
         {% elif not c.user %}
-        <a data-toggle="modal" data-target="#terms-download">
+        <a data-toggle="modal" data-target="#terms-download-{{res.id}}">
          {% else %}
         <a href="{{ res.url }}" class="resource-url-analytics" target="_blank">
           {% endif %}

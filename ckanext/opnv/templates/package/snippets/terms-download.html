@@ -1,4 +1,4 @@
-<div id="terms-download" class="modal fade">
+<div id="terms-download-{{res.id}}" class="modal fade">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h3>Nutzungsvereinbarung</h3>
@@ -8,6 +8,6 @@
     </div>
     <div class="modal-footer">
         <a class="btn" type="button" class="close" data-dismiss="modal" aria-hidden="true">{{_("Ablehnen")}}</a>
-        <a id="closemodal" type="button" href="{{ res.url }}" target="_blank" class="modal-close btn btn-primary" onclick="$('#terms-download').modal('hide')">{{_("Zustimmen")}}</a>
+        <a id="closemodal" type="button" href="{{ res.url }}" target="_blank" class="modal-close btn btn-primary" onclick="$('#terms-download-{{res.id}}').modal('hide')">{{_("Zustimmen")}}</a>
     </div>
 </div>
