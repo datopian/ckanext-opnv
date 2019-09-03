@@ -264,3 +264,23 @@ def package_show(context, data_dict):
         item.after_show(context, package_dict)
 
     return package_dict
+
+
+@toolkit.side_effect_free
+def user_list(context, data_dict):
+    '''We are overwriting the default user_list api action in
+    order to make the users list available only for admins and above
+    '''
+    _check_access('user_list', context, data_dict)
+    return logic.action.get.user_list(context, data_dict)
+
+
+@toolkit.side_effect_free
+def user_show(context, data_dict):
+    '''Forbid anonymous access to user info.
+    '''
+    if context.get('user') or context.get('ignore_auth'):
+        return logic.action.get.user_show(context, data_dict)
+    else:
+        raise toolkit.NotAuthorized(
+            'You must be logged in to perform this action.')

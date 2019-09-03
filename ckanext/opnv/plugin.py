@@ -5,6 +5,7 @@ from ckan.lib.plugins import DefaultTranslation
 
 
 import ckanext.opnv.action
+from ckanext.opnv import auth
 from ckanext.opnv.model import setup as user_extra_model_setup
 import ckanext.opnv.helpers as opnv_helpers
 
@@ -37,17 +38,17 @@ class OpnvPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm, DefaultTra
         return map
 
     def get_auth_functions(self):
-        auth_functions = {}
-        return auth_functions
+        return {
+            'user_list': auth.opnv_user_list
+        }
 
     def get_actions(self):
         action_functions = {
-            'package_show':
-                ckanext.opnv.action.package_show,
-            'user_extra_create':
-                ckanext.opnv.action.user_extra_create,
-            'user_extra_read':
-                ckanext.opnv.action.user_extra_read
+            'package_show': ckanext.opnv.action.package_show,
+            'user_extra_create': ckanext.opnv.action.user_extra_create,
+            'user_extra_read': ckanext.opnv.action.user_extra_read,
+            'user_show': ckanext.opnv.action.user_show,
+            'user_list': ckanext.opnv.action.user_list
         }
 
         return action_functions
